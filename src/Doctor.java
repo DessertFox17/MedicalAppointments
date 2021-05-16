@@ -7,8 +7,17 @@ public class Doctor {
 
     //Constructor
     Doctor(){
-        System.out.println("Building Doctor object");
         id ++;
+        this.name = "Nombre por defecto";
+        this.speciality = "Especialidad por defecto";
+
+    }
+
+    Doctor(String name, String speciality){
+        id ++;
+        this.name = name;
+        this.speciality = speciality;
+
     }
 
     //Behaviors

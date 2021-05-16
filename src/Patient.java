@@ -1,4 +1,4 @@
-public class Patient {
+public class Patient extends Doctor{
     String name;
     String email;
     String address;
@@ -12,4 +12,5 @@ public class Patient {
         this.name = name;
         this.email = email;
     }
+
 }
