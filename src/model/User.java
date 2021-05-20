@@ -1,4 +1,6 @@
-public class Patient extends Doctor {
+package model;
+
+public class User {
 
     //Atributes
     private int id;
@@ -6,18 +8,14 @@ public class Patient extends Doctor {
     private String email;
     private String address;
     private String phoneNumber;
-    private String birthday;
-    private double weight;
-    private double heigh;
-    private String blood;
 
     //Constructor
-    public Patient(String name, String email) {
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    //Getters y Setters
+    //Getters and Setter
     public int getId() {
         return id;
     }
@@ -62,35 +60,9 @@ public class Patient extends Doctor {
         }
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getWeight() {
-        return weight + " kg";
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public String getHeigh() {
-        return heigh + " mts";
-    }
-
-    public void setHeigh(double heigh) {
-        this.heigh = heigh;
-    }
-
-    public String getBlood() {
-        return blood;
-    }
-
-    public void setBlood(String blood) {
-        this.blood = blood;
+    @Override
+    public String toString() {
+        return "User: "+name+", email: "+email+
+                "\nAddress: "+address+", Phone: "+phoneNumber;
     }
 }
