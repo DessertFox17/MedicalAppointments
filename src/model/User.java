@@ -1,6 +1,6 @@
 package model;
 
-public class User {
+public abstract class User {
 
     //Atributes
     private int id;
@@ -65,4 +65,7 @@ public class User {
         return "User: "+name+", email: "+email+
                 "\nAddress: "+address+", Phone: "+phoneNumber;
     }
+
+    public abstract void showDataUser();
+
 }

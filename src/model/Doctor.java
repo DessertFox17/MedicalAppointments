@@ -1,5 +1,7 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,11 +17,12 @@ public class Doctor extends User {
     }
 
     //Static subclass
-    public void AvailableAppointment(Date date, String time) {
+    public void addAvailableAppointment(String date, String time) throws ParseException {
+
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
 
-    public ArrayList<AvailableAppointment> getAvailableAppintments(){
+    public ArrayList<AvailableAppointment> getAvailableAppointments(){
         return availableAppointments;
     }
 
@@ -29,10 +32,11 @@ public class Doctor extends User {
         int idAvailableAppointment;
         private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
         //Constructor
-        public AvailableAppointment(Date date, String time) {
-            this.date = date;
+        public AvailableAppointment(String date, String time) throws ParseException {
+            this.date = format.parse(date);
             this.time = time;
         }
 
@@ -47,6 +51,10 @@ public class Doctor extends User {
 
         public Date getDate() {
             return date;
+        }
+
+        public String getDate(String DATE) {
+            return format.format(date);
         }
 
         public void setDate(Date date) {
@@ -81,5 +89,11 @@ public class Doctor extends User {
     public String toString() {
         return super.toString()+", Speciality: "+speciality+","
                 +"\nAvailable appointments: "+availableAppointments.toString();
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Employee from Red Cross hospital");
+        System.out.println("Employee from Oncology departament");
     }
 }
