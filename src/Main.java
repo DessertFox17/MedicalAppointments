@@ -1,8 +1,9 @@
-import static ui.UIMenu.*;
+import ui.UIMenu;
+
+import java.text.ParseException;
 
 public class Main {
-    public static void main(String[] args) {
-
-        showMenu();
+    public static void main(String[] args) throws ParseException {
+        UIMenu.showMenu();
     }
 }
