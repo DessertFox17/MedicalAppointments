@@ -9,7 +9,7 @@ public class Doctor extends User {
 
     //Atributes
     private String speciality;
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
     //Constructor
     public Doctor(String name, String email) {
@@ -49,11 +49,11 @@ public class Doctor extends User {
             this.idAvailableAppointment = idAvailableAppointment;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
-        public String getDate(String DATE) {
+        public String getDate() {
             return format.format(date);
         }
 
